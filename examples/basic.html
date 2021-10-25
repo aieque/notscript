@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+    </head>
+    
+    <body>
+        
+        <main>
+            <ul id="foreach_1"></ul>
+            <form>
+                <input id="bind_1">
+                <input type="submit" value="Add Todo">
+            </form>
+        </main>        
+    </body>
+
+    <script>
+        todos = [];
+        todo_text = "";
+    
+        function on_submit(event) {
+            event.preventDefault();
+            todos = [...todos, todo_text];
+        }
+    
+        function on_input(event) {
+            todo_text = event.target.value;
+        }
+
+        const foreach_1 = document.getElementById("foreach_1");
+        const form = document.querySelector("form");
+        const input_1 = document.querySelector("input");
+
+        form.addEventListener("submit", on_submit);
+        input_1.addEventListener("input", on_input);
+    </script>
+    
+</html>

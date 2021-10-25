@@ -1,0 +1,19 @@
+todos := [];
+todo_text := "";
+
+on_submit :: (event) {
+    todos = [...todos, todo_text];
+}
+
+main {
+    ul {
+        @foreach(todo in todos) {
+            li $(todo);
+        }
+    }
+
+    @onsubmit(on_submit) @prevent_default form {
+        @oninput(on_input) input;
+        input(type="submit", value="Add Todo");
+    }
+}
