@@ -1,5 +1,5 @@
-todos := [];
-todo_text := "";
+todos = [];
+todo_text = "HAHAHAHA";
 
 on_submit :: (event) {
     todos = [...todos, todo_text];
@@ -11,6 +11,8 @@ main {
             li $(todo);
         }
     }
+
+	// Yeah, we allow comments in the markup
 
     @onsubmit(on_submit) @prevent_default form {
         @oninput(on_input) input;
